@@ -17,7 +17,7 @@ export default function Home() {
   const [userData, setUserData] = useState<UserData | null>(null)
 
   useEffect(() => {
-    if (WebApp.initDataUnsafe.user) {
+    if (typeof window !== 'undefined' && WebApp.initDataUnsafe.user) {
       setUserData(WebApp.initDataUnsafe.user as UserData)
     }
   }, [])
